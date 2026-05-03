@@ -1,0 +1,5 @@
+import Link from "next/link"; import { ArrowRight } from "lucide-react";
+
+export function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) { return ( <Link href={href} className="group inline-flex items-center justify-center gap-2 rounded-full bg-purple-900 px-6 py-3 text-sm font-bold text-white shadow-xl shadow-purple-900/20 transition hover:-translate-y-0.5 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300"> {children} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /> </Link> ); }
+
+export function SecondaryButton({ href, children }: { href: string; children: React.ReactNode }) { return ( <Link href={href} className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-200 bg-white/80 px-6 py-3 text-sm font-bold text-purple-950 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-purple-300 hover:bg-white focus:outline-none focus:ring-4 focus:ring-purple-200"> {children} </Link> ); }

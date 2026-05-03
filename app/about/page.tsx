@@ -1,0 +1,9 @@
+import type { Metadata } from "next"; import { LayoutShell } from "@/components/LayoutShell"; import { PageHero } from "@/components/PageHero"; import { SectionLabel } from "@/components/SectionLabel"; import { PrimaryButton } from "@/components/Buttons";
+
+export const metadata: Metadata = { title: "About Crystal Dreams", description: "Learn about Crystal Dreams Singing Group, a Blackpool community singing group founded by Hannah Marie Blastland to support mental and social wellbeing.", };
+
+export default function AboutPage() { return ( <LayoutShell> <PageHero
+label="About Crystal Dreams"
+title="A Blackpool singing group created to support confidence, wellbeing and connection."
+text="Crystal Dreams Singing Group exists to help people enjoy the positive power of music in a friendly, supportive and uplifting community environment."
+/> <section className="bg-white px-4 py-20 sm:px-6 lg:px-8"> <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]"> <div> <SectionLabel>Our story</SectionLabel> <h2 className="mt-5 font-display text-4xl font-bold text-purple-950">Founded with care and purpose.</h2> </div> <div className="space-y-5 text-lg leading-8 text-slate-700"> <p> Crystal Dreams Singing Group was founded by Hannah Marie Blastland to create a welcoming space where people can come together through music and singing. </p> <p> The group is built around encouragement, confidence, social connection and personal achievement. It is especially suited to people who want a positive activity that supports mental and social wellbeing. </p> <p> Based in Blackpool, Crystal Dreams aims to bring warmth, joy and community spirit to people who want to sing, connect and feel supported. </p> <PrimaryButton href="/contact">Contact Hannah</PrimaryButton> </div> </div> </section> </LayoutShell> ); }

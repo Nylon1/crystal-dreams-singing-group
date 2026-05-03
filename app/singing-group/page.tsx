@@ -1,0 +1,11 @@
+import type { Metadata } from "next"; import { Music2, Star, Users } from "lucide-react"; import { LayoutShell } from "@/components/LayoutShell"; import { PageHero } from "@/components/PageHero"; import { PrimaryButton } from "@/components/Buttons";
+
+export const metadata: Metadata = { title: "Singing Group in Blackpool", description: "Join a friendly singing group in Blackpool focused on music, confidence, social connection and wellbeing.", };
+
+const cards = [ { icon: Music2, title: "Enjoy singing", text: "Take part in music in a positive group setting, whether you are experienced or just starting to find your voice." }, { icon: Users, title: "Feel included", text: "Connect with others in Blackpool and be part of a group built on encouragement, support and kindness." }, { icon: Star, title: "Build achievement", text: "Celebrate progress, grow in confidence and enjoy the feeling of doing something positive for yourself." }, ];
+
+export default function SingingGroupPage() { return ( <LayoutShell> <PageHero
+label="Singing Group"
+title="A welcoming space to sing, meet people and feel supported."
+text="Crystal Dreams Singing Group is designed to feel friendly, relaxed and encouraging. It is not about perfection. It is about enjoying music and building confidence together."
+/> <section className="px-4 py-20 sm:px-6 lg:px-8"> <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3"> {cards.map((card) => { const Icon = card.icon; return ( <div key={card.title} className="rounded-[2rem] bg-white p-7 shadow-xl shadow-purple-900/5 ring-1 ring-purple-100"> <div className="flex h-13 w-13 items-center justify-center rounded-3xl bg-purple-100 text-purple-900"> <Icon className="h-6 w-6" /> </div> <h2 className="mt-6 font-display text-2xl font-bold text-purple-950">{card.title}</h2> <p className="mt-3 leading-7 text-slate-600">{card.text}</p> </div> ); })} </div> <div className="mx-auto mt-10 max-w-3xl rounded-[2rem] bg-purple-950 p-8 text-center text-white"> <h2 className="font-display text-3xl font-bold">Interested in the group?</h2> <p className="mt-3 text-purple-100">Contact Hannah to find out more about Crystal Dreams Singing Group in Blackpool.</p> <div className="mt-6"><PrimaryButton href="/contact">Make an enquiry</PrimaryButton></div> </div> </section> </LayoutShell> ); }
